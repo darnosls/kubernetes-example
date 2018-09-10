@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: api-externa-deployment
+spec:
+  template:
+    metadata:
+      labels:
+        name: api-externa
+    spec:
+      containers:
+        - name: container-api-externa
+          image: darnosls/api_externa:v2
+          ports:
+            - containerPort: 80

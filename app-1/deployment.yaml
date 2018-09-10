@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  template:
+    metadata:
+      labels:
+        name: api
+    spec:
+      containers:
+        - name: container-api-interna
+          image: darnosls/api_interna:v2
+          ports:
+            - containerPort: 80
